@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary:       #FDF8F3;
+  --color-accent:        #B07A68;
+  --color-accent-light:  #C9907A;
+  --color-off-white:     #2C1A12;
+  --color-graphite:      #F5EDE5;
+  --color-muted:         #9A7060;
+  --color-petal:         #EDD5C5;
+  --color-gold:          #C4A46B;
+  --color-gold-light:    #E8D4A8;
+  --color-deep:          #2C1A12;
+  --color-copper:        #8C5A48;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-primary);
+  color: var(--color-off-white);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Copper Gold Shimmer Text */
+.gold-text {
+  background: linear-gradient(135deg, #B07A68 0%, #C4A46B 35%, #E8D4A8 55%, #B07A68 80%, #8C5A48 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-text-animate {
+  background: linear-gradient(135deg, #B07A68 0%, #C4A46B 35%, #E8D4A8 55%, #B07A68 80%, #8C5A48 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: rgba(255, 251, 248, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(196, 164, 107, 0.25);
+  box-shadow: 0 4px 28px rgba(176, 122, 104, 0.08);
+}
+
+.glass-card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(255, 253, 250, 0.98);
+  border-color: rgba(176, 122, 104, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 56px rgba(176, 122, 104, 0.15);
+}
+
+/* Copper Button */
+.btn-gold {
+  background: linear-gradient(135deg, #B07A68, #C4A46B, #B07A68);
+  background-size: 200% auto;
+  color: #FDF8F3;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-gold:hover {
+  background-position: right center;
+  box-shadow: 0 8px 32px rgba(176, 122, 104, 0.45);
+  transform: translateY(-2px);
+}
+
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(255,255,255,0.18), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-gold:hover::after { opacity: 1; }
+
+/* Copper Outline Button */
+.btn-outline-gold {
+  border: 1.5px solid #B07A68;
+  color: #B07A68;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  background: transparent;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.btn-outline-gold:hover {
+  background: #B07A68;
+  color: #FDF8F3;
+  box-shadow: 0 8px 30px rgba(176, 122, 104, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Dividers */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C4A46B, transparent);
+  width: 100%;
+}
+
+.gold-divider-short {
+  height: 2px;
+  width: 60px;
+  background: linear-gradient(90deg, #B07A68, #C4A46B, #E8D4A8);
+  border-radius: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #FDF8F3; }
+::-webkit-scrollbar-thumb { background: #B07A68; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #C9907A; }
+
+/* Fade in */
+.section-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.section-visible { opacity: 1; transform: translateY(0); }
+
+/* Chat */
+.chat-message-user {
+  background: linear-gradient(135deg, #B07A68, #C4A46B);
+  color: #FDF8F3;
+  border-radius: 18px 18px 4px 18px;
+}
+
+.chat-message-bot {
+  background: rgba(255, 251, 248, 0.95);
+  border: 1px solid rgba(196, 164, 107, 0.28);
+  border-radius: 18px 18px 18px 4px;
+  color: #2C1A12;
+}
+
+/* Form inputs */
+.form-input {
+  background: rgba(255, 253, 250, 0.92);
+  border: 1.5px solid rgba(176, 122, 104, 0.22);
+  color: #2C1A12;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #B07A68;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(176, 122, 104, 0.12);
+}
+
+.form-input::placeholder { color: #9A7060; }
+
+/* Typography */
+.font-serif { font-family: 'Playfair Display', serif; }
+.font-sans  { font-family: 'Montserrat', sans-serif; }
+
+/* Stars */
+.star-filled { color: #C4A46B; }
+.star-empty  { color: #EDD5C5; }
+
+/* Hero background - light ivory with dermatology hex pattern */
+.hero-light-bg {
+  background-color: #FDF8F3;
+  background-image:
+    radial-gradient(ellipse 80px 80px at 8%  18%, rgba(196,164,107,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 110px 110px at 78% 12%, rgba(176,122,104,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60px 60px  at 55% 65%, rgba(196,164,107,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 90px 90px  at 22% 82%, rgba(176,122,104,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 130px 130px at 92% 72%, rgba(196,164,107,0.06) 0%, transparent 70%),
+    linear-gradient(135deg, #FDF8F3 0%, #F9EFE8 45%, #FDF3EC 75%, #FDF8F3 100%);
+}
+
+/* Hexagon skin-cell pattern (dermatology inspired) */
+.hero-pattern-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34L28 66zm0 34L0 84V50l28 16 28-16v34L28 100z' fill='none' stroke='%23B07A68' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 56px 100px;
+  pointer-events: none;
+}
+
+/* Noise texture */
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  .mobile-nav { transform: translateX(100%); transition: transform 0.3s ease; }
+  .mobile-nav.open { transform: translateX(0); }
+}

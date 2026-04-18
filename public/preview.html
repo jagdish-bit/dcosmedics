@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>D'CosMedics Clinic — Premium Dermatology & Hair Transplant, Kolkata</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1A1A1A;--accent:#C5A021;--accent-light:#D4B43A;
+  --off-white:#F5F5F5;--graphite:#2A2A2A;--muted:#888;
+}
+html{scroll-behavior:smooth}
+body{background:var(--primary);color:var(--off-white);font-family:'Montserrat',sans-serif;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Playfair Display',serif}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#111}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+
+/* Utilities */
+.gold-text{background:linear-gradient(135deg,#C5A021,#E8CC6A,#C5A021);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite}
+@keyframes shimmer{0%{background-position:0% center}100%{background-position:200% center}}
+.glass{background:rgba(255,255,255,0.03);backdrop-filter:blur(12px);border:1px solid rgba(197,160,33,0.15);border-radius:16px}
+.glass-hover{transition:all .35s cubic-bezier(.4,0,.2,1)}
+.glass-hover:hover{background:rgba(197,160,33,0.06);border-color:rgba(197,160,33,0.4);transform:translateY(-4px);box-shadow:0 20px 60px rgba(197,160,33,.1)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;border-radius:2px;transition:all .3s ease;font-family:'Montserrat',sans-serif}
+.btn-gold{background:linear-gradient(135deg,#C5A021,#D4B43A,#C5A021);background-size:200%;color:#1A1A1A}
+.btn-gold:hover{background-position:right;box-shadow:0 8px 30px rgba(197,160,33,.4);transform:translateY(-2px)}
+.btn-outline{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+.btn-outline:hover{background:var(--accent);color:#1A1A1A;transform:translateY(-2px)}
+.divider{height:2px;width:60px;background:linear-gradient(90deg,#C5A021,#E8CC6A)}
+.label{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.section{padding:100px 0;position:relative;overflow:hidden}
+.container{max-width:1200px;margin:0 auto;padding:0 40px}
+@media(max-width:768px){.container{padding:0 20px}.section{padding:64px 0}}
+
+/* Fade-in observer */
+.fade-up{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* ─── NAVBAR ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:all .4s ease}
+nav.scrolled{background:rgba(26,26,26,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(197,160,33,.1);padding:14px 40px;box-shadow:0 4px 30px rgba(0,0,0,.4)}
+.nav-logo{display:flex;flex-direction:column;line-height:1;text-decoration:none}
+.nav-logo span:first-child{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;background:linear-gradient(135deg,#C5A021,#E8CC6A,#C5A021);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-logo span:last-child{font-size:.55rem;letter-spacing:.35em;color:var(--muted);text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{text-decoration:none;font-size:.78rem;font-weight:500;color:rgba(245,245,245,.65);letter-spacing:.06em;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{display:flex;align-items:center;gap:20px}
+.nav-phone{font-size:.78rem;color:var(--accent);text-decoration:none;font-weight:500}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--accent);transition:all .3s}
+@media(max-width:900px){.nav-links,.nav-phone{display:none}.hamburger{display:flex}}
+
+/* Mobile overlay */
+.mobile-menu{position:fixed;inset:0;z-index:99;background:rgba(26,26,26,.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;justify-content:center;padding:40px;transform:translateX(100%);transition:transform .35s ease}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{font-family:'Playfair Display',serif;font-size:2.2rem;color:rgba(245,245,245,.8);text-decoration:none;border-bottom:1px solid rgba(197,160,33,.1);padding-bottom:18px;margin-bottom:18px;display:block;transition:color .3s}
+.mobile-menu a:hover{color:var(--accent)}
+.menu-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--accent);cursor:pointer;font-size:1.6rem}
+
+/* ─── HERO ─── */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0d0d0d 0%,#1a1a1a 40%,#1e1810 70%,#1a1a1a 100%)}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.hero-orb-1{width:600px;height:600px;top:15%;right:20%;background:radial-gradient(circle,rgba(197,160,33,.08),transparent);animation:pulse-orb 6s ease-in-out infinite}
+.hero-orb-2{width:400px;height:400px;bottom:25%;left:10%;background:radial-gradient(circle,rgba(197,160,33,.05),transparent);animation:pulse-orb 8s ease-in-out infinite reverse}
+@keyframes pulse-orb{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.1);opacity:1}}
+.hero-grid{position:absolute;inset:0;opacity:.02;background-image:linear-gradient(rgba(197,160,33,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(197,160,33,.5) 1px,transparent 1px);background-size:80px 80px}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;width:100%}
+@media(max-width:900px){.hero-content{grid-template-columns:1fr;gap:40px;padding:0 20px;text-align:center}}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border:1px solid rgba(197,160,33,.3);border-radius:100px;margin-bottom:28px}
+.hero-badge .star{color:var(--accent);font-size:.7rem}
+.hero-badge span{font-size:.6rem;letter-spacing:.25em;color:var(--accent);font-weight:600;text-transform:uppercase}
+.hero-h1{font-size:clamp(2.8rem,6vw,5.5rem);font-weight:900;line-height:1.03;margin-bottom:24px;color:var(--off-white)}
+.hero-sub{color:rgba(245,245,245,.55);font-size:1rem;line-height:1.7;margin-bottom:36px;max-width:440px}
+@media(max-width:900px){.hero-sub{margin:0 auto 36px}}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+@media(max-width:900px){.hero-btns{justify-content:center}}
+.hero-stats{display:flex;gap:36px;padding-top:32px;border-top:1px solid rgba(197,160,33,.1);margin-top:36px;flex-wrap:wrap}
+@media(max-width:900px){.hero-stats{justify-content:center}}
+.stat .value{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#C5A021,#E8CC6A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat .label-s{font-size:.65rem;color:var(--muted);margin-top:2px;max-width:70px;line-height:1.3}
+
+/* Doctor card */
+.doctor-card{glass;padding:36px;position:relative;overflow:hidden}
+.doc-avatar{width:120px;height:120px;border-radius:50%;border:2px solid rgba(197,160,33,.4);background:linear-gradient(135deg,#2a2a2a,#1a1a1a);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;position:relative}
+.doc-avatar span{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;background:linear-gradient(135deg,#C5A021,#E8CC6A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.doc-badge{position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);background:var(--accent);color:#1a1a1a;font-size:.55rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;border-radius:100px;white-space:nowrap}
+.doc-creds{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px}
+.doc-cred{font-size:.6rem;letter-spacing:.1em;color:rgba(197,160,33,.8);border:1px solid rgba(197,160,33,.2);padding:3px 10px;border-radius:2px}
+.doc-quote{border-top:1px solid rgba(197,160,33,.12);padding-top:20px;margin-top:20px;font-style:italic;font-size:.78rem;color:rgba(245,245,245,.45);text-align:center;line-height:1.6}
+.doc-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.doc-mini-stat{background:rgba(255,255,255,.03);border:1px solid rgba(197,160,33,.1);border-radius:10px;padding:12px;text-align:center}
+.doc-mini-stat .icon{font-size:1rem;margin-bottom:4px}
+.doc-mini-stat p{font-size:.65rem;color:var(--muted)}
+.scroll-indicator{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted);animation:float 2s ease-in-out infinite}
+.scroll-indicator span{font-size:.55rem;letter-spacing:.3em;text-transform:uppercase}
+.scroll-arrow{font-size:.9rem;color:var(--accent)}
+@keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* ─── ABOUT ─── */
+#about{background:var(--graphite)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:48px}}
+.about-img-wrap{position:relative}
+.about-img-card{aspect-ratio:4/5;border-radius:20px;background:linear-gradient(160deg,#2a2a2a,#1a1a1a);border:1px solid rgba(197,160,33,.15);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;position:relative;overflow:hidden}
+.about-img-card::before{content:'';position:absolute;top:0;right:0;width:4px;height:80px;background:linear-gradient(to bottom,var(--accent),transparent)}
+.about-img-card::after{content:'';position:absolute;top:0;right:0;height:4px;width:80px;background:linear-gradient(to left,var(--accent),transparent)}
+.corner-bl::before{content:'';position:absolute;bottom:0;left:0;width:4px;height:80px;background:linear-gradient(to top,var(--accent),transparent)}
+.corner-bl::after{content:'';position:absolute;bottom:0;left:0;height:4px;width:80px;background:linear-gradient(to right,var(--accent),transparent)}
+.about-float-1{position:absolute;right:-28px;top:60px;padding:20px 24px;min-width:160px;z-index:2}
+.about-float-2{position:absolute;left:-24px;bottom:-24px;padding:18px 20px;max-width:210px;z-index:2}
+.float-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;background:linear-gradient(135deg,#C5A021,#E8CC6A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:2px}
+.float-label{font-size:.65rem;color:var(--muted);line-height:1.4}
+.about-cred-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.cred-tag{font-size:.7rem;font-weight:600;padding:6px 14px;border:1px solid rgba(197,160,33,.3);color:rgba(197,160,33,.85);border-radius:2px}
+.about-bio p{color:rgba(245,245,245,.6);line-height:1.8;font-size:.9rem;margin-bottom:14px}
+.check-list{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:12px}
+.check-list li{display:flex;align-items:flex-start;gap:10px;font-size:.82rem;color:rgba(245,245,245,.65)}
+.check-icon{color:var(--accent);font-size:.9rem;margin-top:1px;flex-shrink:0}
+
+/* ─── SERVICES ─── */
+#services{background:var(--primary)}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:56px}
+@media(max-width:768px){.services-grid{grid-template-columns:1fr}}
+.service-card{border-radius:18px;overflow:hidden;cursor:pointer}
+.service-header{padding:32px}
+.service-icon-wrap{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,rgba(197,160,33,.14),rgba(197,160,33,.04));border:1px solid rgba(197,160,33,.22);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:1.3rem;transition:transform .3s}
+.service-card:hover .service-icon-wrap{transform:scale(1.1)}
+.service-cat{font-size:.6rem;letter-spacing:.22em;color:rgba(197,160,33,.75);text-transform:uppercase;font-weight:600;margin-bottom:6px}
+.service-h3{font-size:1.35rem;font-weight:700;color:var(--off-white);margin-bottom:10px}
+.service-desc{font-size:.82rem;color:rgba(245,245,245,.5);line-height:1.7}
+.service-footer{padding:0 32px 24px;display:flex;align-items:center;justify-content:space-between}
+.service-count{font-size:.68rem;color:var(--muted)}
+.service-arrow{font-size:.8rem;color:var(--accent);transition:transform .3s}
+.service-card:hover .service-arrow{transform:translateX(4px)}
+.treatments-list{max-height:0;overflow:hidden;transition:max-height .45s ease,opacity .35s ease;opacity:0}
+.treatments-list.open{max-height:500px;opacity:1}
+.treatments-inner{padding:0 32px 28px;border-top:1px solid rgba(197,160,33,.1)}
+.treatments-label{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(136,136,136,.7);font-weight:600;margin:20px 0 14px}
+.treatment-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(197,160,33,.07)}
+.treatment-row:last-of-type{border:none}
+.treatment-name{display:flex;align-items:center;gap:8px;font-size:.8rem;color:rgba(245,245,245,.75)}
+.treatment-dot{width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.treatment-price{font-size:.7rem;font-weight:600;color:rgba(197,160,33,.8);white-space:nowrap}
+.book-link{display:inline-flex;align-items:center;gap:6px;font-size:.75rem;font-weight:600;color:var(--accent);margin-top:18px;cursor:pointer;transition:gap .2s}
+.book-link:hover{gap:10px}
+.consult-cta{margin-top:56px;text-align:center}
+.consult-box{display:inline-flex;align-items:center;gap:40px;padding:28px 48px;flex-wrap:wrap;justify-content:center}
+@media(max-width:600px){.consult-box{padding:24px 24px;gap:20px}}
+.consult-label{font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.2em;margin-bottom:4px}
+.consult-text{font-size:1.1rem;font-weight:600;font-family:'Playfair Display',serif}
+.price-highlight{font-weight:700;font-size:1.2rem}
+
+/* ─── WHY US ─── */
+#why-us{background:var(--graphite)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+@media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.why-grid{grid-template-columns:1fr}}
+.why-card{padding:28px;border-radius:14px}
+.why-icon{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,rgba(197,160,33,.12),rgba(197,160,33,.04));border:1px solid rgba(197,160,33,.2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:18px;transition:transform .3s}
+.why-card:hover .why-icon{transform:scale(1.1)}
+.why-h3{font-size:1rem;font-weight:700;margin-bottom:10px;color:var(--off-white)}
+.why-p{font-size:.8rem;color:rgba(245,245,245,.5);line-height:1.7}
+
+/* ─── TESTIMONIALS ─── */
+#testimonials{background:var(--primary)}
+.carousel-wrap{position:relative;max-width:900px;margin:0 auto}
+.carousel-card{padding:52px;min-height:260px;position:relative;overflow:hidden}
+.big-quote{position:absolute;top:28px;right:36px;font-size:6rem;color:rgba(197,160,33,.04);font-family:'Playfair Display',serif;line-height:1;pointer-events:none}
+.stars{display:flex;gap:3px;margin-bottom:20px}
+.star-filled{color:var(--accent)}
+.star-empty{color:#444}
+blockquote{font-family:'Playfair Display',serif;font-size:1.2rem;color:rgba(245,245,245,.82);line-height:1.65;font-style:italic;margin-bottom:28px}
+.reviewer{display:flex;align-items:center;gap:16px}
+.reviewer-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#C5A021,#D4B43A);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;color:#1a1a1a;flex-shrink:0}
+.reviewer-name{font-weight:600;font-size:.9rem;color:var(--off-white)}
+.reviewer-meta{font-size:.7rem;color:var(--muted);margin-top:2px}
+.reviewer-treatment{color:rgba(197,160,33,.8)}
+.carousel-nav{display:flex;align-items:center;justify-content:space-between;margin-top:24px}
+.carousel-dots{display:flex;gap:6px}
+.dot{height:8px;border-radius:4px;cursor:pointer;transition:all .3s;background:var(--muted)}
+.dot.active{width:28px;background:var(--accent)}
+.dot:not(.active){width:8px}
+.carousel-btns{display:flex;gap:10px}
+.carousel-btn{width:40px;height:40px;border-radius:50%;border:1px solid rgba(197,160,33,.3);background:transparent;color:var(--accent);cursor:pointer;font-size:1.1rem;transition:all .3s;display:flex;align-items:center;justify-content:center}
+.carousel-btn:hover{background:var(--accent);color:#1a1a1a}
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+@media(max-width:600px){.mini-grid{grid-template-columns:repeat(2,1fr)}}
+.mini-card{padding:18px;border-radius:14px;cursor:pointer;text-align:left;border:1px solid rgba(197,160,33,.08);transition:all .3s;background:transparent;width:100%}
+.mini-card.active,.mini-card:hover{border-color:rgba(197,160,33,.35);background:rgba(197,160,33,.04)}
+.mini-info{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.mini-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#C5A021,#D4B43A);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:#1a1a1a;flex-shrink:0}
+.mini-name{font-size:.8rem;font-weight:600;color:rgba(245,245,245,.85);line-height:1.2}
+.mini-treatment{font-size:.65rem;color:var(--muted)}
+.mini-stars{display:flex;gap:2px}
+.mini-star{font-size:.55rem;color:var(--accent)}
+.video-section{margin-top:80px}
+.video-section h3{font-size:1.6rem;text-align:center;margin-bottom:32px;color:rgba(245,245,245,.8)}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:700px){.video-grid{grid-template-columns:1fr}}
+.video-card{border-radius:14px;overflow:hidden;cursor:pointer}
+.video-thumb{aspect-ratio:16/9;background:linear-gradient(135deg,#1a1a1a,#2a2a2a);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;position:relative}
+.play-btn{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#C5A021,#D4B43A);display:flex;align-items:center;justify-content:center;transition:transform .3s}
+.video-card:hover .play-btn{transform:scale(1.1)}
+.play-icon{width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:18px solid #1a1a1a;margin-left:3px}
+.video-duration{position:absolute;bottom:10px;right:10px;background:rgba(26,26,26,.8);color:var(--accent);font-size:.65rem;padding:3px 8px;border-radius:4px;font-weight:600}
+.video-info{padding:14px 16px}
+.video-title{font-size:.82rem;font-weight:600;color:rgba(245,245,245,.85);margin-bottom:4px}
+.video-patient{font-size:.7rem;color:var(--muted)}
+
+/* ─── BOOKING ─── */
+#booking{background:var(--graphite)}
+.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+@media(max-width:900px){.booking-grid{grid-template-columns:1fr;gap:40px}}
+.fee-card{padding:28px;border-radius:16px;margin-bottom:24px}
+.fee-amount{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;background:linear-gradient(135deg,#C5A021,#E8CC6A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:8px 0}
+.fee-note{font-size:.78rem;color:rgba(245,245,245,.5);line-height:1.6}
+.info-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+.info-icon{font-size:1rem;margin-top:1px;flex-shrink:0}
+.info-text{font-size:.82rem;color:rgba(245,245,245,.55);line-height:1.5}
+
+/* Form */
+.form-card{padding:32px;border-radius:18px}
+.steps-bar{display:flex;align-items:center;gap:0;margin-bottom:32px}
+.step-item{display:flex;align-items:center;gap:0;flex:1}
+.step-circle{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;transition:all .3s;font-family:'Montserrat',sans-serif}
+.step-circle.done{background:var(--accent);color:#1a1a1a}
+.step-circle.active{border:2px solid var(--accent);color:var(--accent);background:transparent}
+.step-circle.pending{border:1px solid rgba(136,136,136,.3);color:var(--muted);background:transparent}
+.step-line{flex:1;height:1px;background:rgba(136,136,136,.2);margin:0 4px}
+.step-line.done{background:var(--accent)}
+.form-step{display:none}
+.form-step.active{display:block}
+.step-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:20px;color:var(--off-white)}
+.form-group{margin-bottom:14px;position:relative}
+.form-input{width:100%;padding:13px 16px 13px 42px;background:rgba(255,255,255,.04);border:1px solid rgba(197,160,33,.18);color:var(--off-white);font-family:'Montserrat',sans-serif;font-size:.82rem;border-radius:8px;transition:all .3s;outline:none}
+.form-input:focus{border-color:var(--accent);background:rgba(197,160,33,.05);box-shadow:0 0 0 3px rgba(197,160,33,.1)}
+.form-input::placeholder{color:var(--muted)}
+.input-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:.9rem;color:var(--muted);pointer-events:none}
+input[type=date]{color-scheme:dark}
+.time-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
+.time-slot{padding:10px;font-size:.72rem;border:1px solid rgba(197,160,33,.12);background:transparent;color:rgba(245,245,245,.5);border-radius:8px;cursor:pointer;transition:all .3s;font-family:'Montserrat',sans-serif}
+.time-slot:hover{border-color:rgba(197,160,33,.35);color:rgba(245,245,245,.8)}
+.time-slot.selected{border-color:var(--accent);background:rgba(197,160,33,.15);color:var(--accent);font-weight:600}
+.service-list-wrap{max-height:280px;overflow-y:auto;padding-right:4px}
+.service-list-wrap::-webkit-scrollbar{width:3px}
+.service-list-wrap::-webkit-scrollbar-thumb{background:rgba(197,160,33,.3);border-radius:2px}
+.service-category-label{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(136,136,136,.6);font-weight:600;margin:16px 0 8px;padding:0 4px}
+.service-option{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;margin-bottom:6px;border:1px solid rgba(197,160,33,.1);border-radius:8px;cursor:pointer;transition:all .25s;font-size:.8rem;color:rgba(245,245,245,.65)}
+.service-option:hover{border-color:rgba(197,160,33,.3);color:rgba(245,245,245,.85)}
+.service-option.selected{border-color:rgba(197,160,33,.45);background:rgba(197,160,33,.1);color:var(--off-white)}
+.service-price{font-size:.68rem;color:rgba(197,160,33,.75);font-weight:600}
+.confirm-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid rgba(197,160,33,.07)}
+.confirm-row:last-child{border:none}
+.confirm-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.15em;color:var(--muted)}
+.confirm-value{font-size:.82rem;color:rgba(245,245,245,.8);font-weight:500}
+.form-nav{display:flex;gap:10px;margin-top:24px}
+.form-btn{flex:1;padding:14px;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:8px}
+.form-btn-back{background:transparent;border:1px solid rgba(197,160,33,.3);color:var(--accent);flex:0 0 auto;padding:14px 20px}
+.form-btn-back:hover{background:rgba(197,160,33,.08)}
+.form-btn-next{background:linear-gradient(135deg,#C5A021,#D4B43A);color:#1a1a1a}
+.form-btn-next:hover{box-shadow:0 8px 30px rgba(197,160,33,.4);transform:translateY(-2px)}
+.form-btn-next:disabled{opacity:.35;cursor:not-allowed;transform:none;box-shadow:none}
+.success-card{padding:60px 40px;text-align:center;border-radius:18px;display:none}
+.success-card.show{display:block}
+.success-icon{font-size:3.5rem;margin-bottom:20px}
+.textarea-input{width:100%;padding:13px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(197,160,33,.18);color:var(--off-white);font-family:'Montserrat',sans-serif;font-size:.82rem;border-radius:8px;transition:all .3s;outline:none;resize:none;min-height:90px}
+.textarea-input:focus{border-color:var(--accent);background:rgba(197,160,33,.05)}
+.textarea-input::placeholder{color:var(--muted)}
+
+/* ─── CONTACT ─── */
+#contact{background:var(--primary)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+.contact-card{display:flex;gap:18px;padding:22px 24px;border-radius:14px;margin-bottom:12px}
+.contact-icon-wrap{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(197,160,33,.12),rgba(197,160,33,.04));border:1px solid rgba(197,160,33,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.contact-label{font-size:.62rem;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:4px}
+.contact-value{font-size:.85rem;color:rgba(245,245,245,.78);line-height:1.5}
+.contact-value a{color:rgba(245,245,245,.78);text-decoration:none;transition:color .3s}
+.contact-value a:hover{color:var(--accent)}
+.map-wrap{border-radius:20px;overflow:hidden;border:1px solid rgba(197,160,33,.15);min-height:420px;position:relative}
+.map-wrap iframe{width:100%;height:100%;min-height:420px;border:none;filter:grayscale(80%) invert(85%) hue-rotate(180deg) contrast(90%)}
+.map-label{position:absolute;bottom:16px;left:16px;padding:10px 16px;border-radius:10px}
+.map-label-name{font-size:.75rem;font-weight:700;color:var(--accent)}
+.map-label-sub{font-size:.6rem;color:var(--muted);margin-top:2px}
+
+/* ─── FOOTER ─── */
+footer{background:var(--graphite);border-top:1px solid rgba(197,160,33,.1);padding:64px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px}}
+.footer-brand{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#C5A021,#E8CC6A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
+.footer-sub{font-size:.6rem;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
+.footer-desc{font-size:.8rem;color:rgba(245,245,245,.45);line-height:1.7;max-width:280px}
+.footer-col-title{font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;font-weight:600}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer-links a{font-size:.82rem;color:rgba(245,245,245,.45);text-decoration:none;transition:color .3s}
+.footer-links a:hover{color:var(--accent)}
+.footer-contact-item{font-size:.8rem;color:rgba(245,245,245,.45);margin-bottom:10px;line-height:1.5}
+.footer-contact-item a{color:rgba(245,245,245,.45);text-decoration:none;transition:color .3s}
+.footer-contact-item a:hover{color:var(--accent)}
+.footer-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(197,160,33,.3),transparent);margin-bottom:24px}
+.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-copy,.footer-disclaimer{font-size:.68rem;color:rgba(136,136,136,.5)}
+
+/* ─── CHATBOT ─── */
+.chat-fab{position:fixed;bottom:28px;right:28px;z-index:200;width:56px;height:56px;border-radius:50%;border:none;cursor:pointer;font-size:1.5rem;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#C5A021,#D4B43A);box-shadow:0 8px 32px rgba(197,160,33,.45);transition:transform .3s,box-shadow .3s}
+.chat-fab:hover{transform:scale(1.1);box-shadow:0 12px 40px rgba(197,160,33,.55)}
+.chat-window{position:fixed;bottom:100px;right:28px;z-index:199;width:360px;max-width:calc(100vw - 40px);border-radius:20px;overflow:hidden;border:1px solid rgba(197,160,33,.25);box-shadow:0 24px 80px rgba(0,0,0,.5);display:none;flex-direction:column}
+.chat-window.open{display:flex}
+.chat-header{padding:16px 20px;background:linear-gradient(135deg,#1a1a1a,#221e15);border-bottom:1px solid rgba(197,160,33,.18);display:flex;align-items:center;gap:12px}
+.chat-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#C5A021,#D4B43A);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.chat-title{font-size:.85rem;font-weight:600;color:var(--off-white)}
+.chat-online{display:flex;align-items:center;gap:6px;margin-top:2px}
+.online-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+.chat-online-txt{font-size:.6rem;color:var(--muted)}
+.chat-messages{height:300px;overflow-y:auto;padding:16px;background:#141414;display:flex;flex-direction:column;gap:10px}
+.chat-messages::-webkit-scrollbar{width:3px}
+.chat-messages::-webkit-scrollbar-thumb{background:rgba(197,160,33,.2);border-radius:2px}
+.msg{max-width:82%;padding:11px 15px;font-size:.8rem;line-height:1.55}
+.msg-bot{align-self:flex-start;background:rgba(255,255,255,.05);border:1px solid rgba(197,160,33,.18);border-radius:16px 16px 16px 4px;color:rgba(245,245,245,.82)}
+.msg-user{align-self:flex-end;background:linear-gradient(135deg,#C5A021,#D4B43A);color:#1a1a1a;border-radius:16px 16px 4px 16px;font-weight:600}
+.typing{display:flex;gap:4px;align-items:center;padding:11px 15px}
+.typing span{width:6px;height:6px;border-radius:50%;background:rgba(197,160,33,.5);animation:bounce 1.2s ease-in-out infinite}
+.typing span:nth-child(2){animation-delay:.2s}
+.typing span:nth-child(3){animation-delay:.4s}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.quick-qs{padding:10px 12px;background:#141414;border-top:1px solid rgba(197,160,33,.07);display:flex;flex-wrap:wrap;gap:6px}
+.quick-q{font-size:.65rem;padding:6px 12px;border-radius:100px;border:1px solid rgba(197,160,33,.22);color:rgba(197,160,33,.8);background:transparent;cursor:pointer;transition:all .25s;font-family:'Montserrat',sans-serif}
+.quick-q:hover{background:rgba(197,160,33,.1);border-color:var(--accent)}
+.chat-input-area{display:flex;gap:8px;padding:12px;background:#1a1a1a;border-top:1px solid rgba(197,160,33,.1)}
+.chat-input{flex:1;padding:10px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(197,160,33,.18);color:var(--off-white);font-family:'Montserrat',sans-serif;font-size:.8rem;border-radius:8px;outline:none;transition:border-color .3s}
+.chat-input:focus{border-color:var(--accent)}
+.chat-input::placeholder{color:var(--muted)}
+.chat-send{width:38px;height:38px;border-radius:8px;background:var(--accent);border:none;color:#1a1a1a;cursor:pointer;font-size:1rem;transition:all .3s;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.chat-send:hover{background:var(--accent-light);transform:scale(1.05)}
+.chat-send:disabled{background:rgba(197,160,33,.2);color:rgba(197,160,33,.3);cursor:not-allowed;transform:none}
+
+/* Section headers */
+.section-header{text-align:center;margin-bottom:56px}
+.section-header-inner{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:18px}
+.section-h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.1}
+.section-sub{color:rgba(245,245,245,.5);max-width:480px;margin:12px auto 0;font-size:.9rem;line-height:1.7}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════ NAVBAR ════════════════════════════════════ -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <span>D'CosMedics</span>
+    <span>Clinical Excellence</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#testimonials">Results</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="tel:+919830000000" class="nav-phone">+91 98300 00000</a>
+    <a href="#booking" class="btn btn-gold" style="padding:11px 24px;font-size:.7rem">Book Now</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="menu-close" onclick="toggleMenu()">✕</button>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#testimonials" onclick="toggleMenu()">Results</a>
+  <a href="#booking" onclick="toggleMenu()">Book Now</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<!-- ════════════════════════════════════ HERO ════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge fade-up visible">
+        <span class="star">★</span>
+        <span>Kolkata's Premier Aesthetic Clinic</span>
+      </div>
+      <h1 class="hero-h1 fade-up visible" style="transition-delay:.1s">
+        Redefining<br>
+        <span class="gold-text" style="font-style:italic">Beauty</span><br>
+        through Clinical<br>Excellence.
+      </h1>
+      <p class="hero-sub fade-up visible" style="transition-delay:.25s">
+        Kolkata's most advanced Skin, Hair, Cosmetic Surgery &amp; Anti-Aging clinic — where science meets serenity.
+      </p>
+      <div class="hero-btns fade-up visible" style="transition-delay:.4s">
+        <a href="#booking" class="btn btn-gold">Book a Premium Consultation</a>
+        <a href="#services" class="btn btn-outline">Explore Treatments</a>
+      </div>
+      <div class="hero-stats fade-up visible" style="transition-delay:.55s">
+        <div class="stat"><div class="value">19+</div><div class="label-s">Years Experience</div></div>
+        <div class="stat"><div class="value">15,000+</div><div class="label-s">Patients Treated</div></div>
+        <div class="stat"><div class="value">98%</div><div class="label-s">Satisfaction Rate</div></div>
+        <div class="stat"><div class="value">4</div><div class="label-s">Intl. Certifications</div></div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:center">
+      <div style="position:relative;width:100%;max-width:380px" class="fade-up visible" data-delay="0.3">
+        <div class="glass doctor-card" style="padding:36px;border-radius:20px;position:relative;overflow:hidden">
+          <div style="position:absolute;top:0;right:0;width:120px;height:120px;background:radial-gradient(circle at top right,rgba(197,160,33,.1),transparent);pointer-events:none"></div>
+          <div class="doc-avatar" style="position:relative"><span>DG</span><div class="doc-badge">✦ Verified MD</div></div>
+          <div style="text-align:center;margin-top:24px">
+            <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:4px">Dr. Dolly Gupta</h3>
+            <p style="color:var(--accent);font-size:.82rem;font-weight:500;letter-spacing:.05em">Founder & Chief Dermatologist</p>
+            <div class="doc-creds">
+              <span class="doc-cred">MBBS</span>
+              <span class="doc-cred">MD – Dermatology</span>
+              <span class="doc-cred">Fellowship Cosmetic Surgery</span>
+              <span class="doc-cred">Trichologist (USA)</span>
+            </div>
+          </div>
+          <div class="doc-quote">"True beauty begins with skin health, and skin health begins with inner balance."</div>
+          <div class="doc-mini-grid">
+            <div class="doc-mini-stat"><div class="icon">🏆</div><p>19+ Years</p></div>
+            <div class="doc-mini-stat"><div class="icon">👥</div><p>15,000+ Patients</p></div>
+          </div>
+        </div>
+        <div style="position:absolute;bottom:-20px;right:-20px;width:180px;height:180px;border-radius:50%;border:1px dashed rgba(197,160,33,.12);pointer-events:none"></div>
+        <div style="position:absolute;top:-20px;left:-20px;width:90px;height:90px;border-radius:50%;border:1px dashed rgba(197,160,33,.08);pointer-events:none"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator"><span>Scroll</span><div class="scroll-arrow">↓</div></div>
+  <div style="position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,#1a1a1a,transparent)"></div>
+</section>
+
+<!-- ════════════════════════════════════ ABOUT ════════════════════════════════════ -->
+<section class="section" id="about" style="background:var(--graphite)">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap fade-up">
+        <div class="about-img-card corner-bl" style="position:relative">
+          <div style="text-align:center">
+            <div style="width:160px;height:160px;border-radius:50%;border:2px solid rgba(197,160,33,.3);display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#2a2a2a,#1a1a1a);margin:0 auto 16px">
+              <span style="font-family:'Playfair Display',serif;font-size:4rem;font-weight:700;background:linear-gradient(135deg,#C5A021,#E8CC6A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">DG</span>
+            </div>
+            <p style="font-size:.78rem;color:var(--muted);max-width:200px;line-height:1.5">Replace with Dr. Dolly Gupta's professional photograph</p>
+          </div>
+        </div>
+        <div class="glass about-float-1 fade-up" style="transition-delay:.2s">
+          <div class="float-num">19+</div>
+          <div class="float-label">Years of Clinical Excellence</div>
+        </div>
+        <div class="glass about-float-2 fade-up" style="transition-delay:.3s">
+          <div style="font-size:1rem;margin-bottom:6px">🌿</div>
+          <p style="font-size:.7rem;color:rgba(245,245,245,.6);font-style:italic;line-height:1.5">"True beauty begins with skin health, and skin health begins with inner balance."</p>
+        </div>
+      </div>
+
+      <div class="fade-up" style="transition-delay:.1s">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+          <div class="divider"></div>
+          <span class="label">Meet Your Doctor</span>
+        </div>
+        <h2 style="font-size:clamp(2rem,3.5vw,3rem);font-weight:800;margin-bottom:8px">Dr. Dolly Gupta</h2>
+        <p style="color:var(--accent);font-weight:600;letter-spacing:.05em;margin-bottom:24px">Founder & Chief Dermatologist</p>
+        <div class="about-cred-tags">
+          <span class="cred-tag">MBBS</span>
+          <span class="cred-tag">MD – Dermatology</span>
+          <span class="cred-tag">Fellowship in Cosmetic Surgery</span>
+          <span class="cred-tag">Certified Trichologist (USA)</span>
+        </div>
+        <div class="about-bio">
+          <p>Dr. Dolly Gupta is one of Kolkata's most celebrated dermatologists and cosmetic surgeons. With over 19 years of transforming lives through evidence-based aesthetics, she brings a uniquely holistic vision to modern dermatology.</p>
+          <p>Her philosophy integrates advanced clinical techniques with the healing power of mindfulness and meditation — the only practice of its kind in Kolkata.</p>
+        </div>
+        <ul class="check-list">
+          <li><span class="check-icon">✦</span>Pioneer in meditative dermatology — the first in Kolkata</li>
+          <li><span class="check-icon">✦</span>International speaker on integrative aesthetic medicine</li>
+          <li><span class="check-icon">✦</span>USA-certified Trichologist for hair & scalp disorders</li>
+          <li><span class="check-icon">✦</span>Performed 3,000+ successful hair transplant surgeries</li>
+          <li><span class="check-icon">✦</span>Featured in Times of India, Vogue India, and Femina</li>
+        </ul>
+        <div style="margin-top:32px">
+          <a href="#booking" class="btn btn-gold">Book a Consultation with Dr. Gupta</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ SERVICES ════════════════════════════════════ -->
+<section class="section" id="services" style="background:var(--primary)">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-header-inner">
+        <div class="divider"></div>
+        <span class="label">Our Expertise</span>
+        <div class="divider"></div>
+      </div>
+      <h2 class="section-h2">Treatments & <span class="gold-text" style="font-style:italic">Services</span></h2>
+      <p class="section-sub">From advanced dermatology to transformative hair restoration — every treatment is tailored to your unique biology and aesthetic goals.</p>
+    </div>
+
+    <div class="services-grid" id="servicesGrid"></div>
+
+    <div class="consult-cta fade-up">
+      <div class="glass consult-box">
+        <div>
+          <div class="consult-label">Not sure which treatment is right for you?</div>
+          <div class="consult-text">Book a personalized consultation for <span class="gold-text price-highlight">₹1,000</span></div>
+        </div>
+        <a href="#booking" class="btn btn-gold" style="white-space:nowrap">Get Expert Advice</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ WHY US ════════════════════════════════════ -->
+<section class="section" id="why-us" style="background:var(--graphite)">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-header-inner">
+        <div class="divider"></div>
+        <span class="label">Why D'CosMedics</span>
+        <div class="divider"></div>
+      </div>
+      <h2 class="section-h2">The Standard of <span class="gold-text" style="font-style:italic">Excellence</span></h2>
+    </div>
+    <div class="why-grid">
+      <div class="glass glass-hover why-card fade-up"><div class="why-icon">🏆</div><h3 class="why-h3">19+ Years of Mastery</h3><p class="why-p">Dr. Gupta's two decades of experience translate to outcomes other clinics simply cannot match.</p></div>
+      <div class="glass glass-hover why-card fade-up"><div class="why-icon">🔬</div><h3 class="why-h3">Certified Technology</h3><p class="why-p">FDA-approved lasers and internationally certified protocols for every procedure.</p></div>
+      <div class="glass glass-hover why-card fade-up"><div class="why-icon">🌿</div><h3 class="why-h3">Holistic Philosophy</h3><p class="why-p">The only Kolkata clinic integrating meditation and mindfulness into aesthetic medicine.</p></div>
+      <div class="glass glass-hover why-card fade-up"><div class="why-icon">🛡️</div><h3 class="why-h3">Safety First</h3><p class="why-p">Sterile, NABH-compliant facility with zero-compromise safety standards.</p></div>
+      <div class="glass glass-hover why-card fade-up"><div class="why-icon">👥</div><h3 class="why-h3">15,000+ Happy Patients</h3><p class="why-p">A reputation built entirely on patient satisfaction and word-of-mouth trust.</p></div>
+      <div class="glass glass-hover why-card fade-up"><div class="why-icon">📍</div><h3 class="why-h3">Prime Location</h3><p class="why-p">Minutes from Kalighat Metro — easily accessible from all of Kolkata and beyond.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ TESTIMONIALS ════════════════════════════════════ -->
+<section class="section" id="testimonials" style="background:var(--primary)">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-header-inner">
+        <div class="divider"></div>
+        <span class="label">Patient Stories</span>
+        <div class="divider"></div>
+      </div>
+      <h2 class="section-h2">Lives We've <span class="gold-text" style="font-style:italic">Transformed</span></h2>
+      <p class="section-sub">Our greatest achievements walk out of our clinic with renewed confidence.</p>
+    </div>
+
+    <div class="carousel-wrap fade-up">
+      <div class="glass carousel-card" id="carouselCard">
+        <div class="big-quote">"</div>
+        <div id="carouselContent"></div>
+      </div>
+      <div class="carousel-nav">
+        <div class="carousel-dots" id="carouselDots"></div>
+        <div class="carousel-btns">
+          <button class="carousel-btn" onclick="carouselGo(-1)">←</button>
+          <button class="carousel-btn" onclick="carouselGo(1)">→</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mini-grid" id="miniGrid"></div>
+
+    <!-- Video Testimonials -->
+    <div class="video-section fade-up">
+      <h3>Video Testimonials</h3>
+      <div class="video-grid">
+        <div class="glass glass-hover video-card">
+          <div class="video-thumb">
+            <div class="play-btn"><div class="play-icon"></div></div>
+            <p style="font-size:.65rem;color:var(--muted)">Replace with YouTube embed</p>
+            <div class="video-duration">3:24</div>
+          </div>
+          <div class="video-info"><div class="video-title">Hair Transplant Journey</div><div class="video-patient">Rohit S.</div></div>
+        </div>
+        <div class="glass glass-hover video-card">
+          <div class="video-thumb">
+            <div class="play-btn"><div class="play-icon"></div></div>
+            <p style="font-size:.65rem;color:var(--muted)">Replace with YouTube embed</p>
+            <div class="video-duration">2:17</div>
+          </div>
+          <div class="video-info"><div class="video-title">Acne Scar Before & After</div><div class="video-patient">Priya C.</div></div>
+        </div>
+        <div class="glass glass-hover video-card">
+          <div class="video-thumb">
+            <div class="play-btn"><div class="play-icon"></div></div>
+            <p style="font-size:.65rem;color:var(--muted)">Replace with YouTube embed</p>
+            <div class="video-duration">4:05</div>
+          </div>
+          <div class="video-info"><div class="video-title">Anti-Aging Results</div><div class="video-patient">Ananya B.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ BOOKING ════════════════════════════════════ -->
+<section class="section" id="booking" style="background:var(--graphite)">
+  <div class="container">
+    <div class="booking-grid">
+      <!-- Left info -->
+      <div class="fade-up">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+          <div class="divider"></div>
+          <span class="label">Appointments</span>
+        </div>
+        <h2 style="font-size:clamp(2rem,3.5vw,3rem);font-weight:800;margin-bottom:20px;line-height:1.1">Begin Your <span class="gold-text" style="font-style:italic">Transformation</span></h2>
+        <p style="color:rgba(245,245,245,.55);line-height:1.8;font-size:.9rem;margin-bottom:32px">Book a premium consultation with Dr. Dolly Gupta. Each session is personalized — your skin, your goals, your pace.</p>
+
+        <div class="glass fee-card">
+          <div class="consult-label">Consultation Fee</div>
+          <div class="fee-amount">₹1,000</div>
+          <p class="fee-note">Consultation fee is adjustable against treatment costs at the clinic's discretion.</p>
+        </div>
+
+        <div style="margin-top:8px">
+          <div class="info-row"><div class="info-icon">📍</div><div class="info-text">82A Rash Behari Avenue, Next to Kalighat Metro Gate No. 4, Kolkata – 700029</div></div>
+          <div class="info-row"><div class="info-icon">🕐</div><div class="info-text">Mon – Sat: 10:00 AM – 8:00 PM<br>Sunday: 11:00 AM – 4:00 PM</div></div>
+          <div class="info-row"><div class="info-icon">📞</div><div class="info-text"><a href="tel:+919830000000" style="color:rgba(245,245,245,.55);text-decoration:none">+91 98300 00000</a></div></div>
+        </div>
+      </div>
+
+      <!-- Right form -->
+      <div class="fade-up" style="transition-delay:.1s">
+        <!-- Success -->
+        <div class="glass success-card" id="successCard">
+          <div class="success-icon">✅</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;margin-bottom:12px">Booking Confirmed!</h3>
+          <p style="color:rgba(245,245,245,.55);font-size:.88rem;line-height:1.7;margin-bottom:28px">Thank you! We'll confirm your appointment via WhatsApp/call within 2 hours.</p>
+          <button class="btn btn-gold" onclick="resetForm()">Book Another</button>
+        </div>
+
+        <!-- Form -->
+        <div class="glass form-card" id="mainForm">
+          <!-- Steps bar -->
+          <div class="steps-bar">
+            <div class="step-item">
+              <div class="step-circle active" id="sc0">1</div>
+              <div class="step-line" id="sl0"></div>
+            </div>
+            <div class="step-item">
+              <div class="step-circle pending" id="sc1">2</div>
+              <div class="step-line" id="sl1"></div>
+            </div>
+            <div class="step-item">
+              <div class="step-circle pending" id="sc2">3</div>
+              <div class="step-line" id="sl2"></div>
+            </div>
+            <div class="step-item" style="flex:0">
+              <div class="step-circle pending" id="sc3">4</div>
+            </div>
+          </div>
+
+          <!-- Step 0 -->
+          <div class="form-step active" id="step0">
+            <div class="step-title">Personal Information</div>
+            <div class="form-group"><span class="input-icon">👤</span><input type="text" class="form-input" id="fname" placeholder="Your Full Name *"></div>
+            <div class="form-group"><span class="input-icon">📱</span><input type="tel" class="form-input" id="fphone" placeholder="WhatsApp / Phone Number *"></div>
+            <div class="form-group" style="padding-left:0"><input type="email" class="form-input" id="femail" placeholder="Email Address (optional)" style="padding-left:16px"></div>
+            <div class="form-nav">
+              <button class="form-btn form-btn-next" id="next0" onclick="goStep(1)" disabled>Next →</button>
+            </div>
+          </div>
+
+          <!-- Step 1 -->
+          <div class="form-step" id="step1">
+            <div class="step-title">Select Your Treatment</div>
+            <div class="service-list-wrap" id="serviceList"></div>
+            <div class="form-nav">
+              <button class="form-btn form-btn-back" onclick="goStep(0)">← Back</button>
+              <button class="form-btn form-btn-next" id="next1" onclick="goStep(2)" disabled>Next →</button>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="form-step" id="step2">
+            <div class="step-title">Preferred Date & Time</div>
+            <div class="form-group"><span class="input-icon">📅</span><input type="date" class="form-input" id="fdate" min=""></div>
+            <div style="margin-bottom:18px">
+              <div style="font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;font-weight:600">Available Time Slots</div>
+              <div class="time-grid" id="timeGrid"></div>
+            </div>
+            <textarea class="textarea-input" id="fmessage" placeholder="Any specific concerns or questions? (optional)"></textarea>
+            <div class="form-nav">
+              <button class="form-btn form-btn-back" onclick="goStep(1)">← Back</button>
+              <button class="form-btn form-btn-next" id="next2" onclick="goStep(3)" disabled>Next →</button>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="form-step" id="step3">
+            <div class="step-title">Review & Confirm</div>
+            <div id="confirmRows"></div>
+            <div id="bookingError" style="color:#f87171;font-size:.8rem;margin-bottom:12px;display:none"></div>
+            <div class="form-nav">
+              <button class="form-btn form-btn-back" onclick="goStep(2)">← Back</button>
+              <button class="form-btn form-btn-next" onclick="submitBooking()" id="submitBtn">✓ Confirm Booking</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ CONTACT ════════════════════════════════════ -->
+<section class="section" id="contact" style="background:var(--primary)">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-header-inner">
+        <div class="divider"></div>
+        <span class="label">Find Us</span>
+        <div class="divider"></div>
+      </div>
+      <h2 class="section-h2">Visit <span class="gold-text" style="font-style:italic">D'CosMedics</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="fade-up">
+        <div class="glass glass-hover contact-card"><div class="contact-icon-wrap">📍</div><div><div class="contact-label">Address</div><div class="contact-value">82A Rash Behari Avenue, Next to Kalighat Metro Gate No. 4, Kolkata – 700029</div></div></div>
+        <div class="glass glass-hover contact-card"><div class="contact-icon-wrap">📞</div><div><div class="contact-label">Phone</div><div class="contact-value"><a href="tel:+919830000000">+91 98300 00000</a></div></div></div>
+        <div class="glass glass-hover contact-card"><div class="contact-icon-wrap">💬</div><div><div class="contact-label">WhatsApp</div><div class="contact-value"><a href="https://wa.me/919830000000" target="_blank">Chat with us on WhatsApp</a></div></div></div>
+        <div class="glass glass-hover contact-card"><div class="contact-icon-wrap">✉️</div><div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:hello@dcosmedics.in">hello@dcosmedics.in</a></div></div></div>
+        <div class="glass glass-hover contact-card"><div class="contact-icon-wrap">🕐</div><div><div class="contact-label">Hours</div><div class="contact-value">Mon – Sat: 10:00 AM – 8:00 PM<br>Sunday: 11:00 AM – 4:00 PM</div></div></div>
+      </div>
+      <div class="fade-up map-wrap" style="transition-delay:.1s">
+        <iframe src="https://www.google.com/maps?q=82A+Rash+Behari+Avenue+Kolkata+700029&output=embed" allowfullscreen loading="lazy"></iframe>
+        <div class="glass map-label"><div class="map-label-name">D'CosMedics Clinic</div><div class="map-label-sub">Next to Kalighat Metro Gate 4</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ FOOTER ════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">D'CosMedics</div>
+        <div class="footer-sub">Clinical Excellence</div>
+        <p class="footer-desc">Kolkata's most advanced Skin, Hair, Cosmetic Surgery & Anti-Aging clinic — where science meets serenity.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Dr. Gupta</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials">Patient Stories</a></li>
+          <li><a href="#booking">Book Consultation</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item">82A Rash Behari Avenue,<br>Kolkata – 700029</div>
+        <div class="footer-contact-item"><a href="tel:+919830000000">+91 98300 00000</a></div>
+        <div class="footer-contact-item"><a href="mailto:hello@dcosmedics.in">hello@dcosmedics.in</a></div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 D'CosMedics Clinic. All rights reserved.</div>
+      <div class="footer-disclaimer">Treatments are medical procedures — individual results may vary.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════ CHATBOT ════════════════════════════════════ -->
+<button class="chat-fab" onclick="toggleChat()" id="chatFab">💬</button>
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">
+    <div class="chat-avatar">✨</div>
+    <div>
+      <div class="chat-title">Smart Skin Assistant</div>
+      <div class="chat-online"><div class="online-dot"></div><div class="chat-online-txt">Powered by D'CosMedics AI</div></div>
+    </div>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="msg msg-bot">Hello! I'm your Smart Skin Assistant at D'CosMedics. ✨ I can help you with information about our treatments, pricing, and booking. How can I assist you today?</div>
+  </div>
+  <div class="quick-qs" id="quickQs">
+    <button class="quick-q" onclick="sendQuick(this)">What services do you offer?</button>
+    <button class="quick-q" onclick="sendQuick(this)">Hair transplant cost?</button>
+    <button class="quick-q" onclick="sendQuick(this)">Treat acne scars?</button>
+    <button class="quick-q" onclick="sendQuick(this)">How to book?</button>
+  </div>
+  <div class="chat-input-area">
+    <input type="text" class="chat-input" id="chatInput" placeholder="Ask about treatments, pricing..." onkeydown="if(event.key==='Enter')sendMsg()">
+    <button class="chat-send" id="chatSend" onclick="sendMsg()">➤</button>
+  </div>
+</div>
+
+<script>
+// ── Data ──────────────────────────────────────────────────────────────────────
+const SERVICES = [
+  {id:"dermatology",icon:"✨",cat:"Dermatology",h:"Flawless Skin, Clinically Perfected",desc:"Evidence-based treatments for every skin concern.",treatments:[{name:"Acne & Acne Scar Treatment",price:"From ₹2,500"},{name:"Pigmentation & Melasma",price:"From ₹3,000"},{name:"Scar Revision Therapy",price:"From ₹4,000"},{name:"Chemical Peels",price:"From ₹1,800"},{name:"Eczema & Psoriasis Care",price:"Consultation"},{name:"Skin Brightening Program",price:"From ₹5,000"}]},
+  {id:"hair",icon:"💆",cat:"Hair Restoration",h:"Reclaim Every Strand",desc:"Cutting-edge hair transplant surgery for permanent, natural results.",treatments:[{name:"FUE Hair Transplant",price:"From ₹40,000"},{name:"FUT Hair Transplant",price:"From ₹35,000"},{name:"PRP Hair Therapy",price:"From ₹6,000"},{name:"Hair Fall Treatment",price:"From ₹2,000"},{name:"Scalp Micropigmentation",price:"From ₹15,000"},{name:"Beard & Eyebrow Transplant",price:"From ₹25,000"}]},
+  {id:"laser",icon:"⚡",cat:"Laser Treatments",h:"Precision. Power. Perfection.",desc:"State-of-the-art laser technology for flawless results.",treatments:[{name:"Permanent Laser Hair Reduction",price:"From ₹2,000/session"},{name:"Tattoo Removal",price:"From ₹3,500/session"},{name:"Laser Skin Resurfacing",price:"From ₹8,000"},{name:"Q-Switch Laser Toning",price:"From ₹4,000"},{name:"Fractional CO2 Laser",price:"From ₹12,000"},{name:"Vascular Lesion Removal",price:"Consultation"}]},
+  {id:"aesthetics",icon:"⭐",cat:"Aesthetic Medicine",h:"Anti-Aging. Redefined.",desc:"Bespoke treatments for facial harmony and youthful radiance.",treatments:[{name:"Botox & Dysport",price:"From ₹8,000"},{name:"Dermal Fillers",price:"From ₹15,000"},{name:"Lip Augmentation",price:"From ₹12,000"},{name:"Thread Lift",price:"From ₹20,000"},{name:"Skin Tightening (HIFU/RF)",price:"From ₹18,000"},{name:"Vampire Facial (PRP)",price:"From ₹7,000"}]}
+];
+
+const TESTIMONIALS = [
+  {name:"Priya Chakraborty",loc:"Salt Lake, Kolkata",treatment:"FUE Hair Transplant",avatar:"PC",review:"I was skeptical at first, but Dr. Dolly's calm confidence made me trust the process completely. Six months later, I have a full head of natural hair. The results are beyond anything I imagined.",rating:5},
+  {name:"Rohit Singhania",loc:"Park Street, Kolkata",treatment:"Acne Scar Treatment",avatar:"RS",review:"Years of acne scars erased in just four sessions. The staff is incredibly professional, the clinic feels luxurious, and Dr. Gupta explains every step. My confidence is completely restored.",rating:5},
+  {name:"Ananya Bose",loc:"Ballygunge, Kolkata",treatment:"Botox & Fillers",avatar:"AB",review:"Absolutely natural results — no one could tell I had anything done, they just said I looked refreshed and glowing. Dr. Dolly has an artist's eye. The clinic is an oasis of calm in busy Kolkata.",rating:5},
+  {name:"Suresh Mehta",loc:"Howrah",treatment:"Laser Hair Reduction",avatar:"SM",review:"Permanent freedom from shaving after 8 sessions. The laser tech at D'CosMedics is far superior to other clinics I visited. Very fairly priced for the quality delivered.",rating:5},
+  {name:"Tanvi Roy",loc:"New Town, Kolkata",treatment:"Skin Brightening Program",avatar:"TR",review:"My pigmentation issues that I had for a decade are 90% gone. The meditation sessions Dr. Dolly recommends alongside treatment are a unique touch that I absolutely love.",rating:5},
+  {name:"Debashish Pal",loc:"Behala, Kolkata",treatment:"PRP Hair Therapy",avatar:"DP",review:"Three PRP sessions and my hairline stopped receding — new growth is visible. The doctor's holistic approach, combining scalp health with overall wellness, is what sets this clinic apart.",rating:5}
+];
+
+const CHATBOT_KB = {
+  "hair transplant": "D'CosMedics offers FUE Hair Transplant (from ₹40,000) and FUT Hair Transplant (from ₹35,000). Dr. Dolly Gupta has performed 3,000+ successful procedures. We also offer PRP Hair Therapy from ₹6,000. Book a consultation for a personalized assessment! 😊",
+  "acne": "Absolutely! Dr. Gupta specializes in Acne & Acne Scar Treatment starting from ₹2,500, Chemical Peels from ₹1,800, and advanced Scar Revision Therapy from ₹4,000. Results are typically visible within 3–6 sessions.",
+  "cost": "Our consultation fee is ₹1,000 (adjustable against treatment). Treatments range from ₹1,800 for chemical peels to ₹40,000+ for hair transplant surgery. Exact pricing is determined at consultation based on your specific needs.",
+  "laser": "We offer Permanent Laser Hair Reduction (from ₹2,000/session), Tattoo Removal (from ₹3,500/session), Fractional CO2 Laser (from ₹12,000), and Q-Switch Laser Toning (from ₹4,000). All using FDA-approved technology!",
+  "botox": "Dr. Dolly offers Botox & Dysport from ₹8,000, Dermal Fillers from ₹15,000, and Lip Augmentation from ₹12,000. Results are natural-looking — our philosophy is to enhance, not alter.",
+  "book": "You can book in 3 ways: 1) Use our online form right on this page, 2) Call us at +91 98300 00000, or 3) WhatsApp us! Consultation fee is ₹1,000. We're open Mon–Sat 10am–8pm, Sunday 11am–4pm. 📅",
+  "location": "We're at 82A Rash Behari Avenue, Kolkata 700029 — right next to Kalighat Metro Gate No. 4. Very easy to access from anywhere in Kolkata! 📍",
+  "pigmentation": "Yes! Dr. Gupta treats Pigmentation & Melasma starting from ₹3,000 using a combination of chemical peels, laser toning, and customized topical protocols. The Skin Brightening Program (from ₹5,000) is especially popular.",
+  "prp": "We offer PRP (Platelet-Rich Plasma) therapy for both hair restoration (from ₹6,000) and the 'Vampire Facial' for skin rejuvenation (from ₹7,000). It's a natural, non-surgical treatment using your own growth factors.",
+  "experience": "Dr. Dolly Gupta has 19+ years of experience and has treated over 15,000 patients. She holds an MBBS, MD in Dermatology, Fellowship in Cosmetic Surgery, and is a USA-certified Trichologist. 🌟",
+  "default": "That's a great question! For detailed advice tailored to your specific concern, I'd recommend booking a consultation with Dr. Dolly Gupta (₹1,000). She'll give you a personalized treatment plan. Would you like help booking? 😊"
+};
+
+// ── Navbar scroll ──────────────────────────────────────────────────────────────
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ── Mobile menu ────────────────────────────────────────────────────────────────
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// ── Scroll reveal ──────────────────────────────────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// ── Services Grid ──────────────────────────────────────────────────────────────
+const grid = document.getElementById('servicesGrid');
+SERVICES.forEach(s => {
+  const card = document.createElement('div');
+  card.className = 'glass glass-hover service-card fade-up';
+  card.innerHTML = `
+    <div class="service-header">
+      <div class="service-icon-wrap">${s.icon}</div>
+      <div class="service-cat">${s.cat}</div>
+      <h3 class="service-h3">${s.h}</h3>
+      <p class="service-desc">${s.desc}</p>
+    </div>
+    <div class="treatments-list" id="tl-${s.id}">
+      <div class="treatments-inner">
+        <div class="treatments-label">Treatments & Pricing</div>
+        ${s.treatments.map(t=>`<div class="treatment-row"><div class="treatment-name"><div class="treatment-dot"></div>${t.name}</div><div class="treatment-price">${t.price}</div></div>`).join('')}
+        <div class="book-link" onclick="document.querySelector('#booking').scrollIntoView({behavior:'smooth'})">Book this treatment →</div>
+      </div>
+    </div>
+    <div class="service-footer" id="sf-${s.id}">
+      <div class="service-count">${s.treatments.length} treatments available</div>
+      <div class="service-arrow">→</div>
+    </div>`;
+  card.onclick = () => {
+    const tl = document.getElementById(`tl-${s.id}`);
+    const sf = document.getElementById(`sf-${s.id}`);
+    const open = tl.classList.toggle('open');
+    if(sf) sf.style.display = open ? 'none' : 'flex';
+  };
+  grid.appendChild(card);
+});
+observer.observe(grid);
+
+// ── Service list in booking form ────────────────────────────────────────────────
+const serviceList = document.getElementById('serviceList');
+let selectedService = '';
+SERVICES.forEach(s => {
+  const catLabel = document.createElement('div');
+  catLabel.className = 'service-category-label';
+  catLabel.textContent = s.cat;
+  serviceList.appendChild(catLabel);
+  s.treatments.forEach(t => {
+    const opt = document.createElement('div');
+    opt.className = 'service-option';
+    opt.innerHTML = `<span>${t.name}</span><span class="service-price">${t.price}</span>`;
+    opt.onclick = () => {
+      document.querySelectorAll('.service-option').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      selectedService = t.name;
+      document.getElementById('next1').disabled = false;
+    };
+    serviceList.appendChild(opt);
+  });
+});
+
+// ── Time slots ─────────────────────────────────────────────────────────────────
+const TIME_SLOTS = ['10:00 AM','11:00 AM','12:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM'];
+let selectedTime = '';
+const timeGrid = document.getElementById('timeGrid');
+TIME_SLOTS.forEach(t => {
+  const btn = document.createElement('button');
+  btn.className = 'time-slot';
+  btn.textContent = t;
+  btn.onclick = () => {
+    document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedTime = t;
+    checkStep2();
+  };
+  timeGrid.appendChild(btn);
+});
+document.getElementById('fdate').min = new Date().toISOString().split('T')[0];
+document.getElementById('fdate').addEventListener('change', checkStep2);
+function checkStep2() {
+  document.getElementById('next2').disabled = !(document.getElementById('fdate').value && selectedTime);
+}
+
+// ── Step 0 validation ──────────────────────────────────────────────────────────
+['fname','fphone'].forEach(id => {
+  document.getElementById(id).addEventListener('input', () => {
+    const ok = document.getElementById('fname').value.trim() && document.getElementById('fphone').value.trim();
+    document.getElementById('next0').disabled = !ok;
+  });
+});
+
+// ── Step navigation ────────────────────────────────────────────────────────────
+let currentStep = 0;
+function goStep(n) {
+  document.getElementById(`step${currentStep}`).classList.remove('active');
+  document.getElementById(`step${n}`).classList.add('active');
+  // update step circles
+  for(let i=0;i<4;i++){
+    const sc = document.getElementById(`sc${i}`);
+    sc.className = 'step-circle ' + (i<n ? 'done' : i===n ? 'active' : 'pending');
+    sc.textContent = i < n ? '✓' : i+1;
+    if(i<3){
+      const sl = document.getElementById(`sl${i}`);
+      sl.className = 'step-line' + (i<n ? ' done' : '');
+    }
+  }
+  if(n===3) buildConfirm();
+  currentStep = n;
+}
+
+function buildConfirm() {
+  const rows = [
+    {label:'Name', val: document.getElementById('fname').value},
+    {label:'Phone', val: document.getElementById('fphone').value},
+    {label:'Email', val: document.getElementById('femail').value || 'Not provided'},
+    {label:'Treatment', val: selectedService},
+    {label:'Date', val: document.getElementById('fdate').value},
+    {label:'Time', val: selectedTime},
+  ];
+  document.getElementById('confirmRows').innerHTML = rows.map(r=>
+    `<div class="confirm-row"><div class="confirm-label">${r.label}</div><div class="confirm-value">${r.val}</div></div>`
+  ).join('');
+}
+
+async function submitBooking() {
+  const btn = document.getElementById('submitBtn');
+  btn.textContent = '⏳ Booking...';
+  btn.disabled = true;
+  document.getElementById('bookingError').style.display = 'none';
+  try {
+    const res = await fetch('/api/book', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        name: document.getElementById('fname').value,
+        phone: document.getElementById('fphone').value,
+        email: document.getElementById('femail').value,
+        service: selectedService,
+        preferredDate: document.getElementById('fdate').value,
+        preferredTime: selectedTime,
+        message: document.getElementById('fmessage').value,
+      })
+    });
+    if(!res.ok) throw new Error();
+    document.getElementById('mainForm').style.display = 'none';
+    document.getElementById('successCard').classList.add('show');
+  } catch {
+    document.getElementById('bookingError').style.display = 'block';
+    document.getElementById('bookingError').textContent = 'Something went wrong. Please call us directly at +91 98300 00000';
+    btn.textContent = '✓ Confirm Booking';
+    btn.disabled = false;
+  }
+}
+
+function resetForm() {
+  document.getElementById('successCard').classList.remove('show');
+  document.getElementById('mainForm').style.display = 'block';
+  goStep(0);
+  document.getElementById('fname').value = '';
+  document.getElementById('fphone').value = '';
+  document.getElementById('femail').value = '';
+  document.getElementById('fdate').value = '';
+  document.getElementById('fmessage').value = '';
+  selectedService = '';
+  selectedTime = '';
+  document.querySelectorAll('.service-option').forEach(o=>o.classList.remove('selected'));
+  document.querySelectorAll('.time-slot').forEach(b=>b.classList.remove('selected'));
+  document.getElementById('next0').disabled = true;
+  document.getElementById('next1').disabled = true;
+  document.getElementById('next2').disabled = true;
+}
+
+// ── Testimonials carousel ──────────────────────────────────────────────────────
+let carIdx = 0;
+function renderCarousel() {
+  const t = TESTIMONIALS[carIdx];
+  document.getElementById('carouselContent').innerHTML = `
+    <div class="stars">${'<span class="star-filled">★</span>'.repeat(t.rating)}</div>
+    <blockquote>"${t.review}"</blockquote>
+    <div class="reviewer">
+      <div class="reviewer-avatar">${t.avatar}</div>
+      <div>
+        <div class="reviewer-name">${t.name}</div>
+        <div class="reviewer-meta">${t.loc} · Treatment: <span class="reviewer-treatment">${t.treatment}</span></div>
+      </div>
+    </div>`;
+  document.getElementById('carouselDots').innerHTML = TESTIMONIALS.map((_,i)=>
+    `<div class="dot${i===carIdx?' active':''}" onclick="carouselTo(${i})"></div>`
+  ).join('');
+  document.querySelectorAll('.mini-card').forEach((c,i) => {
+    c.classList.toggle('active', i===carIdx);
+  });
+}
+function carouselGo(d) { carIdx=(carIdx+d+TESTIMONIALS.length)%TESTIMONIALS.length; renderCarousel(); }
+function carouselTo(i) { carIdx=i; renderCarousel(); }
+
+// Build mini grid
+const miniGrid = document.getElementById('miniGrid');
+TESTIMONIALS.forEach((t,i) => {
+  const card = document.createElement('button');
+  card.className = 'mini-card glass' + (i===0?' active':'');
+  card.innerHTML = `
+    <div class="mini-info">
+      <div class="mini-avatar">${t.avatar}</div>
+      <div><div class="mini-name">${t.name}</div><div class="mini-treatment">${t.treatment}</div></div>
+    </div>
+    <div class="mini-stars">${'<span class="mini-star">★</span>'.repeat(t.rating)}</div>`;
+  card.onclick = () => carouselTo(i);
+  miniGrid.appendChild(card);
+});
+renderCarousel();
+setInterval(() => carouselGo(1), 6000);
+
+// ── Chatbot ────────────────────────────────────────────────────────────────────
+let chatOpen = false;
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const w = document.getElementById('chatWindow');
+  const fab = document.getElementById('chatFab');
+  w.classList.toggle('open', chatOpen);
+  fab.textContent = chatOpen ? '✕' : '💬';
+}
+
+function getLocalResponse(msg) {
+  const lower = msg.toLowerCase();
+  for(const [key, val] of Object.entries(CHATBOT_KB)) {
+    if(key !== 'default' && lower.includes(key)) return val;
+  }
+  if(lower.includes('price')||lower.includes('cost')||lower.includes('fee')||lower.includes('₹')) return CHATBOT_KB['cost'];
+  if(lower.includes('where')||lower.includes('address')||lower.includes('metro')) return CHATBOT_KB['location'];
+  if(lower.includes('doctor')||lower.includes('dolly')||lower.includes('gupta')||lower.includes('qualified')) return CHATBOT_KB['experience'];
+  return CHATBOT_KB['default'];
+}
+
+function addMsg(text, role) {
+  const msgs = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = `msg msg-${role}`;
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+
+async function sendMsg() {
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  if(!text) return;
+  input.value = '';
+  document.getElementById('quickQs').style.display = 'none';
+  addMsg(text, 'user');
+
+  // Show typing indicator
+  const msgs = document.getElementById('chatMessages');
+  const typing = document.createElement('div');
+  typing.className = 'msg msg-bot typing';
+  typing.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(typing);
+  msgs.scrollTop = msgs.scrollHeight;
+
+  // Try API first, fall back to local KB
+  setTimeout(async () => {
+    typing.remove();
+    try {
+      const res = await fetch('/api/chat', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({messages:[{role:'user',content:text}]})
+      });
+      if(!res.ok) throw new Error();
+      const data = await res.json();
+      addMsg(data.message, 'bot');
+    } catch {
+      addMsg(getLocalResponse(text), 'bot');
+    }
+  }, 900);
+}
+
+function sendQuick(btn) {
+  document.getElementById('chatInput').value = btn.textContent;
+  sendMsg();
+}
+
+// Smooth scroll for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if(target) target.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
